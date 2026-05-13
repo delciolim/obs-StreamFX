@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adonai Lisboa — Brand Guidelines 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET & TOKENS ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pedra:   #1A1714;
+      --osso:    #F5F0E8;
+      --ambar:   #C4862B;
+      --lisboa:  #5C5650;
+      --nevoa:   #E0D9CE;
+      --bg:      #0A0A0A;
+      --bg-card: #111010;
+
+      --font-display: 'Cormorant', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-mono:    'DM Mono', 'Courier New', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--osso);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVIGATION ─────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(10, 10, 10, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(245, 240, 232, 0.07);
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      color: var(--osso);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--lisboa);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--osso); }
+
+    /* ── LAYOUT ─────────────────────────────── */
+    main { padding-top: 4.5rem; }
+
+    section {
+      padding: 8rem 3rem;
+      border-bottom: 1px solid rgba(245, 240, 232, 0.06);
+      scroll-margin-top: 5rem;
+    }
+
+    /* ── TYPOGRAPHY HELPERS ─────────────────────────────── */
+    .chapter-label {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ambar);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .chapter-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 5.5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--osso);
+      margin-bottom: 1.5rem;
+    }
+
+    .chapter-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--lisboa);
+      max-width: 52ch;
+      line-height: 1.8;
+    }
+
+    .section-rule {
+      width: 36px;
+      height: 1.5px;
+      background: var(--ambar);
+      margin: 2.25rem 0;
+    }
+
+    /* ── COVER ─────────────────────────────── */
+    #cover {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 8rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cover::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%; height: 100%;
+      background: radial-gradient(ellipse at 80% 20%, rgba(196,134,43,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cover-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--ambar);
+      margin-bottom: 3.5rem;
+    }
+
+    .cover-logo-area { margin-bottom: 4.5rem; }
+
+    .cover-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+      font-style: italic;
+      color: var(--lisboa);
+      max-width: 55ch;
+      line-height: 1.9;
+      margin-bottom: 4rem;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 4.5rem;
+      align-items: flex-start;
+    }
+
+    .cover-meta-item label {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ambar);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .cover-meta-item span {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      color: var(--lisboa);
+    }
+
+    .cover-scroll {
+      position: absolute;
+      bottom: 3rem; right: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .cover-scroll span {
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--lisboa);
+      writing-mode: vertical-rl;
+    }
+
+    .cover-scroll-line {
+      width: 1px; height: 64px;
+      background: linear-gradient(to bottom, var(--ambar), transparent);
+    }
+
+    /* ── LOGO SECTION ─────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-top: 3.5rem;
+    }
+
+    .logo-card {
+      background: var(--bg-card);
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      min-height: 290px;
+      position: relative;
+    }
+
+    .logo-card.bg-dark    { background: #0A0A0A; }
+    .logo-card.bg-light   { background: var(--osso); }
+    .logo-card.bg-pedra   { background: var(--pedra); }
+    .logo-card.bg-white   { background: #ffffff; }
+    .logo-card.bg-card    { background: var(--bg-card); }
+
+    .logo-card-label {
+      position: absolute;
+      bottom: 1.25rem; left: 1.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.25);
+    }
+
+    .logo-card.bg-light .logo-card-label,
+    .logo-card.bg-white .logo-card-label { color: rgba(26, 23, 20, 0.28); }
+
+    /* ── COLORS ─────────────────────────────── */
+    .color-system {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+      margin-top: 3.5rem;
+    }
+
+    .color-swatch {
+      aspect-ratio: 1;
+    }
+
+    .color-meta {
+      margin-top: 1.25rem;
+    }
+
+    .color-name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--osso);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-hex {
+      font-family: var(--font-mono);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      color: var(--ambar);
+    }
+
+    .color-role {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--lisboa);
+      margin-top: 0.3rem;
+      font-weight: 300;
+    }
+
+    /* ── TYPE ─────────────────────────────── */
+    .type-block {
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(245, 240, 232, 0.07);
+    }
+
+    .type-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 2.25rem;
+    }
+
+    .type-meta h3 {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ambar);
+      font-weight: 400;
+    }
+
+    .type-meta span {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.1em;
+      color: var(--lisboa);
+    }
+
+    .specimen-display {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      font-weight: 300;
+      line-height: 0.93;
+      letter-spacing: -0.025em;
+      color: var(--osso);
+    }
+
+    .specimen-italic {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 4.5rem);
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--osso);
+    }
+
+    .specimen-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--osso);
+      max-width: 62ch;
+    }
+
+    .specimen-body-light {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--lisboa);
+      max-width: 62ch;
+    }
+
+    /* ── APPLICATIONS ─────────────────────────────── */
+    .app-label {
+      font-family: var(--font-mono);
+      font-size: 0.5625rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ambar);
+      margin-bottom: 2rem;
+    }
+
+    .app-section { margin-top: 5rem; }
+    .app-section:first-child { margin-top: 3.5rem; }
+
+    /* Business Card */
+    .bizcard {
+      width: 340px;
+      height: 200px;
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .bizcard-front {
+      background: var(--pedra);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.75rem 2rem;
+    }
+
+    .bizcard-back {
+      background: var(--osso);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.75rem;
+    }
+
+    /* Instagram Post */
+    .ig-post {
+      width: 360px;
+      height: 360px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 2.25rem;
+    }
+
+    /* Slide */
+    .slide-wrap {
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 16/9;
+      background: var(--bg);
+      border: 1px solid rgba(245,240,232,0.06);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7% 9%;
+    }
+
+    /* Email Sig */
+    .email-wrap {
+      background: #17151270;
+      border: 1px solid rgba(245,240,232,0.08);
+      padding: 2.5rem;
+      max-width: 460px;
+      border-radius: 2px;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 820px) {
+      nav { padding: 1.1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 1.5rem; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .color-system { grid-template-columns: repeat(3, 1fr); }
+      #cover { padding: 5rem 1.5rem; }
+      .cover-meta { flex-direction: column; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══════════════════════════════════ -->
+<nav>
+  <div class="nav-brand">Adonai Lisboa</div>
+  <ul class="nav-links">
+    <li><a href="#cover">Identidade</a></li>
+    <li><a href="#logo">Logotipo</a></li>
+    <li><a href="#cores">Cores</a></li>
+    <li><a href="#tipografia">Tipografia</a></li>
+    <li><a href="#graficos">Elementos</a></li>
+    <li><a href="#aplicacoes">Aplicações</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════════════════
+     00 — COVER
+════════════════════════════════════════════════════ -->
+<section id="cover">
+  <div class="cover-eyebrow">Identidade Visual — Versão 1.0 · 2025</div>
+
+  <div class="cover-logo-area">
+    <svg viewBox="0 0 520 118" fill="none" xmlns="http://www.w3.org/2000/svg"
+         style="width: min(520px, 88vw); height: auto;">
+      <!-- Mark: architectural A -->
+      <g transform="translate(0, 9)">
+        <line x1="44" y1="7"  x2="6"  y2="94" stroke="#F5F0E8" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="48" y1="7"  x2="86" y2="94" stroke="#F5F0E8" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="23" y1="63" x2="69" y2="63" stroke="#F5F0E8" stroke-width="1.3"/>
+        <line x1="6"  y1="98" x2="86" y2="98" stroke="#C4862B" stroke-width="0.9"/>
+      </g>
+      <!-- Wordmark -->
+      <text x="116" y="70"
+            font-family="Cormorant, Georgia, serif"
+            font-size="54" font-weight="300"
+            fill="#F5F0E8" letter-spacing="4">ADONAI</text>
+      <line x1="116" y1="81" x2="518" y2="81"
+            stroke="rgba(245,240,232,0.12)" stroke-width="0.6"/>
+      <text x="116" y="104"
+            font-family="DM Sans, sans-serif"
+            font-size="13.5" font-weight="300"
+            fill="#5C5650" letter-spacing="13">LISBOA</text>
+    </svg>
+  </div>
+
+  <p class="cover-tagline">
+    Amar as pessoas acima das estruturas.<br>
+    Servir a Deus na plenitude do nosso ser.
+  </p>
+
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Categoria</label>
+      <span>Igreja Evangélica Pentecostal</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Localização</label>
+      <span>Lisboa, Portugal</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Origem</label>
+      <span>Comunidade Angolana</span>
+    </div>
+    <div class="cover-meta-item">
+      <label>Versão</label>
+      <span>1.0 · 2025</span>
+    </div>
+  </div>
+
+  <div class="cover-scroll">
+    <span>Explorar</span>
+    <div class="cover-scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     01 — LOGO SYSTEM
+════════════════════════════════════════════════════ -->
+<section id="logo">
+  <span class="chapter-label">01 — Sistema de Logotipo</span>
+  <h2 class="chapter-title">O Sinal<br>e a Palavra</h2>
+  <div class="section-rule"></div>
+  <p class="chapter-subtitle">
+    O sistema é composto por um monograma arquitetônico e um wordmark
+    em tensão tipográfica deliberada — serifada para o eterno, grotesca
+    para o contemporâneo. O sinal funciona de 16px a escala monumental.
+  </p>
+
+  <div class="logo-grid">
+
+    <!-- 1. Principal escuro -->
+    <div class="logo-card bg-dark" style="align-items: flex-start; padding: 3.5rem;">
+      <svg viewBox="0 0 480 108" fill="none" style="width: 100%; max-width: 400px; height: auto;">
+        <g transform="translate(0, 8)">
+          <line x1="40" y1="6"  x2="6"  y2="88" stroke="#F5F0E8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="44" y1="6"  x2="78" y2="88" stroke="#F5F0E8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="21" y1="59" x2="63" y2="59" stroke="#F5F0E8" stroke-width="1.2"/>
+          <line x1="6"  y1="92" x2="78" y2="92" stroke="#C4862B" stroke-width="0.8"/>
+        </g>
+        <text x="104" y="62" font-family="Cormorant, Georgia, serif" font-size="48"
+              font-weight="300" fill="#F5F0E8" letter-spacing="3">ADONAI</text>
+        <line x1="104" y1="73" x2="478" y2="73" stroke="rgba(245,240,232,0.1)" stroke-width="0.6"/>
+        <text x="104" y="93" font-family="DM Sans, sans-serif" font-size="12"
+              font-weight="300" fill="#5C5650" letter-spacing="11">LISBOA</text>
+      </svg>
+      <span class="logo-card-label">Versão Principal — Fundo Escuro</span>
+    </div>
+
+    <!-- 2. Principal claro -->
+    <div class="logo-card bg-light" style="align-items: flex-start; padding: 3.5rem;">
+      <svg viewBox="0 0 480 108" fill="none" style="width: 100%; max-width: 400px; height: auto;">
+        <g transform="translate(0, 8)">
+          <line x1="40" y1="6"  x2="6"  y2="88" stroke="#1A1714" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="44" y1="6"  x2="78" y2="88" stroke="#1A1714" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="21" y1="59" x2="63" y2="59" stroke="#1A1714" stroke-width="1.2"/>
+          <line x1="6"  y1="92" x2="78" y2="92" stroke="#C4862B" stroke-width="0.8"/>
+        </g>
+        <text x="104" y="62" font-family="Cormorant, Georgia, serif" font-size="48"
+              font-weight="300" fill="#1A1714" letter-spacing="3">ADONAI</text>
+        <line x1="104" y1="73" x2="478" y2="73" stroke="rgba(26,23,20,0.12)" stroke-width="0.6"/>
+        <text x="104" y="93" font-family="DM Sans, sans-serif" font-size="12"
+              font-weight="300" fill="#5C5650" letter-spacing="11">LISBOA</text>
+      </svg>
+      <span class="logo-card-label">Versão Principal — Fundo Claro</span>
+    </div>
+
+    <!-- 3. Empilhado -->
+    <div class="logo-card bg-pedra">
+      <svg viewBox="0 0 200 200" fill="none" style="width: 155px; height: 155px;">
+        <g transform="translate(54, 16)">
+          <line x1="46" y1="6"  x2="6"  y2="90" stroke="#F5F0E8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="50" y1="6"  x2="90" y2="90" stroke="#F5F0E8" stroke-width="2.6" stroke-linecap="round"/>
+          <line x1="23" y1="61" x2="73" y2="61" stroke="#F5F0E8" stroke-width="1.2"/>
+          <line x1="6"  y1="94" x2="90" y2="94" stroke="#C4862B" stroke-width="0.8"/>
+        </g>
+        <text x="100" y="138" text-anchor="middle" font-family="Cormorant, Georgia, serif"
+              font-size="22" font-weight="400" fill="#F5F0E8" letter-spacing="4">ADONAI</text>
+        <text x="100" y="160" text-anchor="middle" font-family="DM Sans, sans-serif"
+              font-size="7.5" font-weight="300" fill="#5C5650" letter-spacing="8">LISBOA</text>
+      </svg>
+      <span class="logo-card-label">Versão Empilhada</span>
+    </div>
+
+    <!-- 4. Monograma isolado -->
+    <div class="logo-card bg-dark">
+      <svg viewBox="0 0 100 112" fill="none" style="width: 90px; height: 101px;">
+        <line x1="50" y1="8"  x2="8"  y2="98" stroke="#F5F0E8" stroke-width="3.0" stroke-linecap="round"/>
+        <line x1="54" y1="8"  x2="96" y2="98" stroke="#F5F0E8" stroke-width="3.0" stroke-linecap="round"/>
+        <line x1="26" y1="67" x2="76" y2="67" stroke="#F5F0E8" stroke-width="1.4"/>
+        <line x1="8"  y1="103" x2="96" y2="103" stroke="#C4862B" stroke-width="0.9"/>
+      </svg>
+      <span class="logo-card-label">Monograma Isolado</span>
+    </div>
+
+    <!-- 5. Monocromático preto -->
+    <div class="logo-card bg-white">
+      <svg viewBox="0 0 100 112" fill="none" style="width: 90px; height: 101px;">
+        <line x1="50" y1="8"  x2="8"  y2="98" stroke="#000000" stroke-width="3.0" stroke-linecap="round"/>
+        <line x1="54" y1="8"  x2="96" y2="98" stroke="#000000" stroke-width="3.0" stroke-linecap="round"/>
+        <line x1="26" y1="67" x2="76" y2="67" stroke="#000000" stroke-width="1.4"/>
+        <line x1="8"  y1="103" x2="96" y2="103" stroke="#000000" stroke-width="1.0"/>
+      </svg>
+      <span class="logo-card-label">Monocromático — Preto</span>
+    </div>
+
+    <!-- 6. Contorno -->
+    <div class="logo-card bg-card">
+      <svg viewBox="0 0 210 116" fill="none" style="width: 210px; height: auto;">
+        <text x="0" y="74" font-family="Cormorant, Georgia, serif"
+              font-size="56" font-weight="400"
+              fill="none" stroke="#F5F0E8" stroke-width="0.75" letter-spacing="3">ADONAI</text>
+        <text x="2" y="104" font-family="DM Sans, sans-serif"
+              font-size="14.5" font-weight="400"
+              fill="none" stroke="#C4862B" stroke-width="0.4" letter-spacing="12">LISBOA</text>
+      </svg>
+      <span class="logo-card-label">Versão Contorno</span>
+    </div>
+
+  </div>
+
+  <!-- Usage rules -->
+  <div style="margin-top: 4rem; padding: 2.5rem; border: 1px solid rgba(245,240,232,0.07);">
+    <span class="chapter-label" style="margin-bottom: 1.5rem;">Regras de uso</span>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem;">
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 0.5rem;">Espaço de proteção</div>
+        <div style="font-family: var(--font-body); font-size: 0.8125rem; font-weight: 300; color: var(--lisboa);">Mínimo de 1× a altura do símbolo em todos os lados.</div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 0.5rem;">Tamanho mínimo</div>
+        <div style="font-family: var(--font-body); font-size: 0.8125rem; font-weight: 300; color: var(--lisboa);">Wordmark: 120px. Monograma: 24px. Abaixo, usar apenas o símbolo.</div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 0.5rem;">Fundos permitidos</div>
+        <div style="font-family: var(--font-body); font-size: 0.8125rem; font-weight: 300; color: var(--lisboa);">Pedra Angular, Osso, Branco, Âmbar. Nunca sobre fotografia sem overlay.</div>
+      </div>
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ambar); margin-bottom: 0.5rem;">Proibido</div>
+        <div style="font-family: var(--font-body); font-size: 0.8125rem; font-weight: 300; color: var(--lisboa);">Distorcer, rotacionar, recolorir fora da paleta, usar efeito sombra ou brilho.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     02 — COLORS
+════════════════════════════════════════════════════ -->
+<section id="cores">
+  <span class="chapter-label">02 — Paleta de Cores</span>
+  <h2 class="chapter-title">Cinco Cores,<br>Uma Presença</h2>
+  <div class="section-rule"></div>
+  <p class="chapter-subtitle">
+    Uma paleta construída em torno do warm-black e do bone cream —
+    os tons da pedra de Lisboa e do papel de alta qualidade.
+    O Âmbar como única cor quente e saturada: evoca chama, não metal.
+  </p>
+
+  <div class="color-system">
+    <div>
+      <div class="color-swatch" style="background: #1A1714;"></div>
+      <div class="color-meta">
+        <span class="color-name">Pedra Angular</span>
+        <div class="color-hex">#1A1714</div>
+        <div class="color-role">Cor primária · fundação</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background: #F5F0E8;"></div>
+      <div class="color-meta">
+        <span class="color-name">Osso</span>
+        <div class="color-hex">#F5F0E8</div>
+        <div class="color-role">Claro primário · tipografia</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background: #C4862B;"></div>
+      <div class="color-meta">
+        <span class="color-name">Âmbar</span>
+        <div class="color-hex">#C4862B</div>
+        <div class="color-role">Acento · ênfase e destaque</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background: #5C5650;"></div>
+      <div class="color-meta">
+        <span class="color-name">Lisboa</span>
+        <div class="color-hex">#5C5650</div>
+        <div class="color-role">Neutro médio · suporte</div>
+      </div>
+    </div>
+    <div>
+      <div class="color-swatch" style="background: #E0D9CE;"></div>
+      <div class="color-meta">
+        <span class="color-name">Névoa</span>
+        <div class="color-hex">#E0D9CE</div>
+        <div class="color-role">Claro secundário · fundos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Combinações -->
+  <div style="margin-top: 4rem;">
+    <span class="chapter-label" style="margin-bottom: 1.5rem;">Combinações principais</span>
+    <div style="display: flex; gap: 2px; flex-wrap: wrap;">
+      <div style="background:#1A1714; width:170px; height:88px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Cormorant',serif; font-size:1.375rem; color:#F5F0E8; letter-spacing:0.08em;">ADONAI</span>
+      </div>
+      <div style="background:#F5F0E8; width:170px; height:88px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Cormorant',serif; font-size:1.375rem; color:#1A1714; letter-spacing:0.08em;">ADONAI</span>
+      </div>
+      <div style="background:#C4862B; width:170px; height:88px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Cormorant',serif; font-size:1.375rem; color:#1A1714; letter-spacing:0.08em;">ADONAI</span>
+      </div>
+      <div style="background:#0A0A0A; border:1px solid rgba(245,240,232,0.08); width:170px; height:88px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Cormorant',serif; font-size:1.375rem; color:#C4862B; letter-spacing:0.08em;">ADONAI</span>
+      </div>
+      <div style="background:#E0D9CE; width:170px; height:88px; display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Cormorant',serif; font-size:1.375rem; color:#1A1714; letter-spacing:0.08em;">ADONAI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     03 — TYPOGRAPHY
+════════════════════════════════════════════════════ -->
+<section id="tipografia">
+  <span class="chapter-label">03 — Sistema Tipográfico</span>
+  <h2 class="chapter-title">A Voz da<br>Identidade</h2>
+  <div class="section-rule"></div>
+  <p class="chapter-subtitle">
+    Três famílias em tensão produtiva: o eterno encontra o presente,
+    o editorial encontra o funcional.
+  </p>
+
+  <!-- Display: Cormorant -->
+  <div class="type-block" style="border-top: none; padding-top: 3rem;">
+    <div class="type-meta">
+      <h3>Display — Cormorant</h3>
+      <span>Títulos · Citações · Ênfase editorial</span>
+    </div>
+    <div class="specimen-display">Fé que<br>transforma.</div>
+    <div class="specimen-italic" style="margin-top: 1.25rem;">"Adonai — nosso refúgio e fortaleza."</div>
+    <div style="margin-top: 2.5rem; display: flex; gap: 3.5rem; flex-wrap: wrap;">
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Light 300</div>
+        <div style="font-family:'Cormorant',serif; font-weight:300; font-size:1.875rem; color:var(--osso);">Cormorant Light</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Regular 400</div>
+        <div style="font-family:'Cormorant',serif; font-weight:400; font-size:1.875rem; color:var(--osso);">Cormorant Regular</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">SemiBold 600</div>
+        <div style="font-family:'Cormorant',serif; font-weight:600; font-size:1.875rem; color:var(--osso);">Cormorant SemiBold</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Italic 300</div>
+        <div style="font-family:'Cormorant',serif; font-weight:300; font-style:italic; font-size:1.875rem; color:var(--osso);">Cormorant Light Italic</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body: DM Sans -->
+  <div class="type-block">
+    <div class="type-meta">
+      <h3>Texto — DM Sans</h3>
+      <span>Corpo · Interface · Navegação · Botões</span>
+    </div>
+    <p class="specimen-body">Adonai Lisboa é uma comunidade de fé em movimento — enraizada na tradição do Evangelho e comprometida com as pessoas da cidade. Acreditamos que a Igreja existe para servir, não para ser servida.</p>
+    <p class="specimen-body-light" style="margin-top: 1rem;">Cada dom, cada história, cada encontro é um fio no tecido vivo que Deus tece em Lisboa. Vem como és. Cresce onde estás. Vai como foste enviado.</p>
+    <div style="margin-top: 2.5rem; display: flex; gap: 3.5rem; flex-wrap: wrap;">
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Light 300</div>
+        <div style="font-family:'DM Sans',sans-serif; font-weight:300; font-size:1.25rem; color:var(--osso);">DM Sans Light</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Regular 400</div>
+        <div style="font-family:'DM Sans',sans-serif; font-weight:400; font-size:1.25rem; color:var(--osso);">DM Sans Regular</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">Medium 500</div>
+        <div style="font-family:'DM Sans',sans-serif; font-weight:500; font-size:1.25rem; color:var(--osso);">DM Sans Medium</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; color:var(--ambar); letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.5rem;">SemiBold 600</div>
+        <div style="font-family:'DM Sans',sans-serif; font-weight:600; font-size:1.25rem; color:var(--osso);">DM Sans SemiBold</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mono: DM Mono -->
+  <div class="type-block">
+    <div class="type-meta">
+      <h3>Técnica — DM Mono</h3>
+      <span>Labels · Metadados · Referências · Detalhes</span>
+    </div>
+    <div style="font-family:var(--font-mono); font-size:1.5rem; line-height:1.9; color:var(--ambar);">
+      IDENTIDADE VISUAL — 2025<br>
+      Lisboa, Portugal · Igreja Evangélica<br>
+      Capítulo 03 — Tipografia
+    </div>
+    <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.875rem;">
+      <div style="display:flex; gap:2.5rem; align-items:center;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">CAP XS</span>
+        <span style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--ambar);">CAPÍTULO — SEÇÃO — LABEL DE DESTAQUE</span>
+      </div>
+      <div style="display:flex; gap:2.5rem; align-items:center;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">MONO SM</span>
+        <span style="font-family:var(--font-mono); font-size:0.6875rem; letter-spacing:0.08em; color:var(--osso);">Detalhes de apoio, metadados, datas e horários</span>
+      </div>
+      <div style="display:flex; gap:2.5rem; align-items:center;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">MONO MD</span>
+        <span style="font-family:var(--font-mono); font-size:0.875rem; letter-spacing:0.05em; color:var(--osso);">Referências bíblicas, endereços, links e códigos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type scale -->
+  <div class="type-block">
+    <div class="type-meta">
+      <h3>Escala Tipográfica Completa</h3>
+      <span>Hierarquia visual</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.5rem;">
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">Display</span>
+        <span style="font-family:'Cormorant',serif; font-size:5rem; font-weight:300; color:var(--osso); line-height:1;">80px</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">H1</span>
+        <span style="font-family:'Cormorant',serif; font-size:3.5rem; font-weight:300; color:var(--osso); line-height:1.1;">56px / 3.5rem — Cormorant</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">H2</span>
+        <span style="font-family:'Cormorant',serif; font-size:2.25rem; font-weight:400; color:var(--osso);">36px / 2.25rem — Cormorant</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">H3</span>
+        <span style="font-family:'DM Sans',sans-serif; font-size:1.25rem; font-weight:500; color:var(--osso);">20px / 1.25rem — DM Sans Medium</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">Body</span>
+        <span style="font-family:'DM Sans',sans-serif; font-size:1rem; font-weight:400; color:var(--osso);">16px / 1rem — DM Sans Regular</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">Small</span>
+        <span style="font-family:'DM Sans',sans-serif; font-size:0.875rem; font-weight:300; color:var(--lisboa);">14px / 0.875rem — DM Sans Light</span>
+      </div>
+      <div style="display:flex; align-items:baseline; gap:2rem; flex-wrap:wrap;">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; color:var(--lisboa); letter-spacing:0.15em; min-width:5rem; text-transform:uppercase;">Label</span>
+        <span style="font-family:'DM Mono',monospace; font-size:0.5625rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ambar);">9px / 0.5625rem — DM Mono · +220 ls</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     04 — GRAPHIC ELEMENTS
+════════════════════════════════════════════════════ -->
+<section id="graficos">
+  <span class="chapter-label">04 — Elementos Gráficos</span>
+  <h2 class="chapter-title">A Gramática<br>Visual</h2>
+  <div class="section-rule"></div>
+  <p class="chapter-subtitle">
+    O sistema gráfico é construído sobre grelha modular de 40px, linhas
+    de precisão e silêncio como elemento estrutural. Nada é decorativo
+    sem ser funcional.
+  </p>
+
+  <!-- Grid Pattern -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 3.5rem;">
+    <div style="background:var(--bg-card); overflow:hidden; min-height:280px; display:flex; flex-direction:column;">
+      <svg viewBox="0 0 400 250" fill="none" style="width:100%; flex:1;" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="grid-sm" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(245,240,232,0.05)" stroke-width="0.5"/>
+          </pattern>
+          <pattern id="grid-lg" width="120" height="120" patternUnits="userSpaceOnUse">
+            <path d="M 120 0 L 0 0 0 120" fill="none" stroke="rgba(196,134,43,0.1)" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="250" fill="url(#grid-sm)"/>
+        <rect width="400" height="250" fill="url(#grid-lg)"/>
+        <!-- Mark on grid -->
+        <g transform="translate(154, 72)">
+          <line x1="44" y1="6"  x2="6"  y2="96" stroke="rgba(245,240,232,0.55)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="48" y1="6"  x2="86" y2="96" stroke="rgba(245,240,232,0.55)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="23" y1="65" x2="69" y2="65" stroke="rgba(245,240,232,0.35)" stroke-width="1"/>
+          <line x1="6"  y1="100" x2="86" y2="100" stroke="rgba(196,134,43,0.55)" stroke-width="0.8"/>
+        </g>
+      </svg>
+      <div style="padding:1.25rem 1.75rem; border-top:1px solid rgba(245,240,232,0.06);">
+        <span style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar);">Grelha modular — 40px base</span>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-card); padding:3rem; min-height:280px; display:flex; flex-direction:column; gap:2.25rem;">
+      <span style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar);">Sistema de Linhas e Divisores</span>
+      <div style="display:flex; flex-direction:column; gap:2rem;">
+        <div>
+          <div style="width:40px; height:2px; background:var(--ambar); margin-bottom:0.875rem;"></div>
+          <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--lisboa); font-weight:300;">Acento — 2px · Âmbar · ênfase</span>
+        </div>
+        <div>
+          <div style="width:100%; height:1px; background:rgba(245,240,232,0.18); margin-bottom:0.875rem;"></div>
+          <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--lisboa); font-weight:300;">Divisor principal — 1px · Osso 18%</span>
+        </div>
+        <div>
+          <div style="width:100%; height:0.5px; background:rgba(245,240,232,0.07); margin-bottom:0.875rem;"></div>
+          <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--lisboa); font-weight:300;">Divisor sutil — 0.5px · Osso 7%</span>
+        </div>
+        <div>
+          <div style="display:flex; gap:10px; margin-bottom:0.875rem; align-items:center;">
+            <div style="width:48px; height:1px; background:rgba(245,240,232,0.25);"></div>
+            <div style="width:4px; height:4px; background:var(--ambar); border-radius:50%;"></div>
+            <div style="width:48px; height:1px; background:rgba(245,240,232,0.25);"></div>
+          </div>
+          <span style="font-family:var(--font-body); font-size:0.75rem; color:var(--lisboa); font-weight:300;">Separador com acento — detalhe tipográfico</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Numbers -->
+  <div style="margin-top:4.5rem;">
+    <span class="chapter-label">Tratamento de Números e Listas</span>
+    <div style="display:flex; gap:4rem; align-items:flex-end; flex-wrap:wrap; margin-top:1.5rem;">
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:1rem;">Membros</div>
+        <div style="font-family:'Cormorant',serif; font-size:5.5rem; font-weight:300; color:var(--osso); line-height:1;">01</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:1rem;">Anos</div>
+        <div style="font-family:'Cormorant',serif; font-size:5.5rem; font-weight:300; color:var(--osso); line-height:1;">04</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:1rem;">Células</div>
+        <div style="font-family:'Cormorant',serif; font-size:5.5rem; font-weight:300; color:var(--osso); line-height:1;">12</div>
+      </div>
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:1rem;">Capítulo</div>
+        <div style="font-family:'Cormorant',serif; font-size:5.5rem; font-weight:300; color:var(--ambar); line-height:1;">§ 4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Mood -->
+  <div style="margin-top:4.5rem;">
+    <span class="chapter-label">Direção de Fotografia</span>
+    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:2px; margin-top:1.5rem;">
+      <div style="aspect-ratio:4/3; background:#1a1714; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:1.5rem;">
+        <div style="position:absolute; inset:0; background:linear-gradient(145deg, #2a2520 0%, #0f0d0b 100%);"></div>
+        <div style="position:relative;">
+          <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:0.5rem;">Mood 01</div>
+          <div style="font-family:'Cormorant',serif; font-size:0.9375rem; font-style:italic; color:var(--osso); line-height:1.5;">Retrato — luz natural lateral,<br>alto contraste, fundo neutro</div>
+        </div>
+      </div>
+      <div style="aspect-ratio:4/3; background:#0e0c0a; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:1.5rem;">
+        <div style="position:absolute; inset:0; background:linear-gradient(45deg, #1c1814 0%, #080808 100%);"></div>
+        <div style="position:relative;">
+          <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:0.5rem;">Mood 02</div>
+          <div style="font-family:'Cormorant',serif; font-size:0.9375rem; font-style:italic; color:var(--osso); line-height:1.5;">Arquitetura de Lisboa —<br>linha, geometria, silêncio</div>
+        </div>
+      </div>
+      <div style="aspect-ratio:4/3; background:#201c16; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:1.5rem;">
+        <div style="position:absolute; inset:0; background:linear-gradient(220deg, rgba(196,134,43,0.1) 0%, #171410 60%);"></div>
+        <div style="position:relative;">
+          <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:0.5rem;">Mood 03</div>
+          <div style="font-family:'Cormorant',serif; font-size:0.9375rem; font-style:italic; color:var(--osso); line-height:1.5;">Comunidade — calor, movimento,<br>presença humana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     05 — APPLICATIONS
+════════════════════════════════════════════════════ -->
+<section id="aplicacoes">
+  <span class="chapter-label">05 — Aplicações</span>
+  <h2 class="chapter-title">A Identidade<br>em Uso</h2>
+  <div class="section-rule"></div>
+
+  <!-- ── BUSINESS CARD ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Cartão de Visita</div>
+    <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:flex-start;">
+
+      <!-- Front -->
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa); margin-bottom:0.875rem;">Frente</div>
+        <div class="bizcard bizcard-front">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(196,134,43,0.65);">Igreja Evangélica Pentecostal</div>
+            <svg viewBox="0 0 44 54" fill="none" style="width:22px; height:27px; opacity:0.75;">
+              <line x1="22" y1="4"  x2="3"  y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+              <line x1="25" y1="4"  x2="44" y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+              <line x1="12" y1="33" x2="35" y2="33" stroke="#F5F0E8" stroke-width="1"/>
+              <line x1="3"  y1="51" x2="44" y2="51" stroke="#C4862B" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-family:'Cormorant',serif; font-size:1.1rem; font-weight:400; color:var(--osso); letter-spacing:0.03em;">Pastor João Baptista</div>
+            <div style="font-family:var(--font-body); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-top:0.2rem;">Líder Pastoral · Fundador</div>
+          </div>
+          <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.07em; color:var(--lisboa); line-height:1.9;">
+            joao@adonailisboa.pt<br>
+            +351 912 345 678
+          </div>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa); margin-bottom:0.875rem;">Verso</div>
+        <div class="bizcard bizcard-back">
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <svg viewBox="0 0 200 78" fill="none" style="width:160px; height:auto;">
+              <text x="100" y="44" text-anchor="middle" font-family="Cormorant, Georgia, serif"
+                    font-size="32" font-weight="300" fill="#1A1714" letter-spacing="3">ADONAI</text>
+              <line x1="12" y1="52" x2="188" y2="52" stroke="rgba(26,23,20,0.1)" stroke-width="0.5"/>
+              <text x="100" y="67" text-anchor="middle" font-family="DM Sans, sans-serif"
+                    font-size="7" font-weight="300" fill="#5C5650" letter-spacing="8">LISBOA</text>
+            </svg>
+          </div>
+          <div style="font-family:var(--font-mono); font-size:0.35rem; letter-spacing:0.12em; text-align:center; color:rgba(92,86,80,0.45); text-transform:uppercase;">
+            Lisboa, Portugal · adonailisboa.pt
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── INSTAGRAM ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Post Instagram — 1:1</div>
+    <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+
+      <!-- Post 1: Quote -->
+      <div class="ig-post" style="background:var(--pedra);">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.025;" viewBox="0 0 360 360" preserveAspectRatio="xMidYMid slice">
+          <defs><pattern id="ig-g" width="36" height="36" patternUnits="userSpaceOnUse">
+            <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#F5F0E8" stroke-width="0.5"/>
+          </pattern></defs>
+          <rect width="360" height="360" fill="url(#ig-g)"/>
+        </svg>
+        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--ambar);"></div>
+        <!-- Top -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; position:relative; z-index:1;">
+          <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar);">Palavra · Domingo</span>
+          <svg viewBox="0 0 44 54" fill="none" style="width:16px; height:auto; opacity:0.4;">
+            <line x1="22" y1="4"  x2="3"  y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="25" y1="4"  x2="44" y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="33" x2="35" y2="33" stroke="#F5F0E8" stroke-width="1"/>
+          </svg>
+        </div>
+        <!-- Quote -->
+        <div style="font-family:'Cormorant',serif; font-size:1.625rem; font-weight:300; font-style:italic; color:var(--osso); line-height:1.4; max-width:22ch; flex:1; display:flex; align-items:center; position:relative; z-index:1;">
+          "Deus não escolhe os capacitados — ele capacita os escolhidos."
+        </div>
+        <!-- Bottom -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; position:relative; z-index:1;">
+          <div>
+            <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--ambar);">1 Samuel 16.7</div>
+            <div style="font-family:var(--font-body); font-size:0.4375rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(92,86,80,0.55); margin-top:0.25rem;">Adonai Lisboa</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2: Event -->
+      <div class="ig-post" style="background:var(--osso);">
+        <div style="position:absolute; top:0; left:0; right:0; height:2px; background:var(--pedra);"></div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; position:relative; z-index:1;">
+          <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(26,23,20,0.4);">Evento · Lisboa</span>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:1;">
+          <div style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-bottom:0.75rem;">Próximo Domingo</div>
+          <div style="font-family:'Cormorant',serif; font-size:2.625rem; font-weight:300; color:var(--pedra); line-height:1.1;">Culto de<br>Adoração</div>
+          <div style="width:32px; height:1.5px; background:var(--ambar); margin:1.25rem 0;"></div>
+          <div style="font-family:var(--font-body); font-size:0.8125rem; font-weight:300; color:var(--lisboa);">10h00 · Lisboa</div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; position:relative; z-index:1;">
+          <svg viewBox="0 0 130 30" fill="none" style="width:86px; height:auto;">
+            <text x="0" y="23" font-family="Cormorant, Georgia, serif"
+                  font-size="22" font-weight="300" fill="#1A1714" letter-spacing="2">ADONAI</text>
+          </svg>
+          <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--lisboa);">adonailisboa.pt</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SLIDE 16:9 ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Slide de Abertura — 16:9</div>
+    <div class="slide-wrap">
+      <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.025;" viewBox="0 0 720 405" preserveAspectRatio="xMidYMid slice">
+        <defs><pattern id="slide-g" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F5F0E8" stroke-width="0.5"/>
+        </pattern></defs>
+        <rect width="720" height="405" fill="url(#slide-g)"/>
+      </svg>
+      <!-- Left accent bar -->
+      <div style="position:absolute; left:0; top:14%; bottom:14%; width:2px; background:var(--ambar); opacity:0.55;"></div>
+      <!-- Bottom rule -->
+      <div style="position:absolute; bottom:0; left:0; right:0; height:1px; background:rgba(245,240,232,0.06);"></div>
+
+      <div style="font-family:var(--font-mono); font-size:0.45rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--ambar); margin-bottom:5%; position:relative; z-index:1;">
+        Igreja Evangélica Pentecostal · Lisboa
+      </div>
+      <div style="font-family:'Cormorant',serif; font-size:clamp(2rem,5vw,4rem); font-weight:300; line-height:0.97; color:var(--osso); letter-spacing:-0.02em; margin-bottom:3%; position:relative; z-index:1;">
+        Adonai<br>Lisboa
+      </div>
+      <div style="font-family:var(--font-body); font-size:clamp(0.55rem,1.1vw,0.8125rem); font-weight:300; color:var(--lisboa); letter-spacing:0.04em; position:relative; z-index:1;">
+        Amar as pessoas. Servir a Deus. Transformar a cidade.
+      </div>
+
+      <!-- Corner mark -->
+      <div style="position:absolute; bottom:8%; right:8%;">
+        <svg viewBox="0 0 60 70" fill="none" style="width:32px; height:auto; opacity:0.25;">
+          <line x1="30" y1="5"  x2="4"  y2="62" stroke="#F5F0E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="34" y1="5"  x2="60" y2="62" stroke="#F5F0E8" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="16" y1="42" x2="48" y2="42" stroke="#F5F0E8" stroke-width="1.2"/>
+          <line x1="4"  y1="66" x2="60" y2="66" stroke="#C4862B" stroke-width="0.8"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FAVICON / APP ICON ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Favicon · App Icon</div>
+    <div style="display:flex; gap:2.5rem; align-items:flex-end; flex-wrap:wrap;">
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:96px; height:96px; background:var(--pedra); border-radius:22px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 96 96" fill="none" style="width:96px; height:96px;">
+            <line x1="48" y1="16" x2="18" y2="76" stroke="#F5F0E8" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="52" y1="16" x2="82" y2="76" stroke="#F5F0E8" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="31" y1="52" x2="69" y2="52" stroke="#F5F0E8" stroke-width="1.6"/>
+            <line x1="18" y1="80" x2="82" y2="80" stroke="#C4862B" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">App · 96px</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:48px; height:48px; background:var(--pedra); border-radius:10px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 48 48" fill="none" style="width:48px; height:48px;">
+            <line x1="24" y1="7"  x2="8"  y2="39" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="7"  x2="42" y2="39" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="15" y1="27" x2="35" y2="27" stroke="#F5F0E8" stroke-width="1"/>
+            <line x1="8"  y1="42" x2="42" y2="42" stroke="#C4862B" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">Fav · 48px</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:32px; height:32px; background:var(--pedra); border-radius:6px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 32 32" fill="none" style="width:32px; height:32px;">
+            <line x1="16" y1="5"  x2="5"  y2="26" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="18" y1="5"  x2="29" y2="26" stroke="#F5F0E8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="10" y1="18" x2="24" y2="18" stroke="#F5F0E8" stroke-width="0.8"/>
+            <line x1="5"  y1="28" x2="29" y2="28" stroke="#C4862B" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">Fav · 32px</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:16px; height:16px; background:var(--pedra); display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 16 16" fill="none" style="width:16px; height:16px;">
+            <line x1="8" y1="2"  x2="2"  y2="13" stroke="#F5F0E8" stroke-width="1" stroke-linecap="round"/>
+            <line x1="9" y1="2"  x2="15" y2="13" stroke="#F5F0E8" stroke-width="1" stroke-linecap="round"/>
+            <line x1="5" y1="9"  x2="12" y2="9"  stroke="#F5F0E8" stroke-width="0.5"/>
+            <line x1="2" y1="14" x2="15" y2="14" stroke="#C4862B" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">Fav · 16px</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:96px; height:96px; background:var(--osso); border-radius:22px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 96 96" fill="none" style="width:96px; height:96px;">
+            <line x1="48" y1="16" x2="18" y2="76" stroke="#1A1714" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="52" y1="16" x2="82" y2="76" stroke="#1A1714" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="31" y1="52" x2="69" y2="52" stroke="#1A1714" stroke-width="1.6"/>
+            <line x1="18" y1="80" x2="82" y2="80" stroke="#C4862B" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">Light · 96px</span>
+      </div>
+
+      <div style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+        <div style="width:96px; height:96px; background:var(--ambar); border-radius:22px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 96 96" fill="none" style="width:96px; height:96px;">
+            <line x1="48" y1="16" x2="18" y2="76" stroke="#1A1714" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="52" y1="16" x2="82" y2="76" stroke="#1A1714" stroke-width="3.2" stroke-linecap="round"/>
+            <line x1="31" y1="52" x2="69" y2="52" stroke="#1A1714" stroke-width="1.6"/>
+            <line x1="18" y1="80" x2="82" y2="80" stroke="rgba(26,23,20,0.45)" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--lisboa);">Âmbar · 96px</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── EMAIL SIGNATURE ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Assinatura de E-mail</div>
+    <div class="email-wrap">
+      <div style="display:flex; align-items:flex-start; gap:1.5rem;">
+        <svg viewBox="0 0 44 54" fill="none" style="width:26px; height:32px; flex-shrink:0; margin-top:0.2rem;">
+          <line x1="22" y1="4"  x2="3"  y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+          <line x1="25" y1="4"  x2="44" y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+          <line x1="12" y1="33" x2="35" y2="33" stroke="#F5F0E8" stroke-width="1"/>
+          <line x1="3"  y1="51" x2="44" y2="51" stroke="#C4862B" stroke-width="0.8"/>
+        </svg>
+        <div>
+          <div style="font-family:'Cormorant',serif; font-size:1.25rem; font-weight:400; color:var(--osso); letter-spacing:0.02em;">Pastor João Baptista</div>
+          <div style="font-family:var(--font-body); font-size:0.5625rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ambar); margin-top:0.2rem;">Líder Pastoral · Fundador</div>
+        </div>
+      </div>
+      <div style="width:100%; height:1px; background:rgba(245,240,232,0.08); margin:1.25rem 0;"></div>
+      <div style="font-family:var(--font-mono); font-size:0.5625rem; letter-spacing:0.06em; color:var(--lisboa); line-height:2.1;">
+        joao@adonailisboa.pt<br>
+        +351 912 345 678<br>
+        adonailisboa.pt
+      </div>
+      <div style="font-family:'Cormorant',serif; font-size:0.875rem; font-weight:300; letter-spacing:0.12em; text-transform:uppercase; color:rgba(245,240,232,0.35); margin-top:1rem;">Adonai Lisboa</div>
+      <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.1em; color:rgba(92,86,80,0.38); margin-top:0.25rem; text-transform:uppercase;">Igreja Evangélica Pentecostal · Lisboa, Portugal</div>
+    </div>
+  </div>
+
+  <!-- ── MERCH / T-SHIRT ─────────────────────────────── -->
+  <div class="app-section">
+    <div class="app-label">Merch — Camiseta</div>
+    <div style="display:flex; gap:3rem; flex-wrap:wrap; align-items:flex-start;">
+
+      <!-- Dark shirt -->
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa); margin-bottom:1rem;">Escuro · Monograma</div>
+        <svg viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:240px; height:277px;">
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="#1A1714"/>
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="none" stroke="rgba(245,240,232,0.06)" stroke-width="1"/>
+          <path d="M 78 22 C 88 54 172 54 182 22" fill="none" stroke="rgba(245,240,232,0.08)" stroke-width="0.8"/>
+          <!-- Monogram chest -->
+          <g transform="translate(106, 108)">
+            <line x1="24" y1="4"  x2="3"  y2="54" stroke="#F5F0E8" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="27" y1="4"  x2="48" y2="54" stroke="#F5F0E8" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="13" y1="37" x2="38" y2="37" stroke="#F5F0E8" stroke-width="1.1"/>
+            <line x1="3"  y1="58" x2="48" y2="58" stroke="#C4862B" stroke-width="0.8"/>
+          </g>
+          <text x="130" y="198" text-anchor="middle" font-family="DM Sans, sans-serif"
+                font-size="5" font-weight="300" fill="rgba(245,240,232,0.22)" letter-spacing="5.5">ADONAI LISBOA</text>
+        </svg>
+      </div>
+
+      <!-- Light shirt -->
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa); margin-bottom:1rem;">Claro · Wordmark</div>
+        <svg viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:240px; height:277px;">
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="#F5F0E8"/>
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="none" stroke="rgba(26,23,20,0.07)" stroke-width="1"/>
+          <path d="M 78 22 C 88 54 172 54 182 22" fill="none" stroke="rgba(26,23,20,0.09)" stroke-width="0.8"/>
+          <!-- Wordmark chest -->
+          <text x="130" y="152" text-anchor="middle" font-family="Cormorant, Georgia, serif"
+                font-size="18" font-weight="400" fill="#1A1714" letter-spacing="3">ADONAI</text>
+          <line x1="78" y1="159" x2="182" y2="159" stroke="rgba(26,23,20,0.12)" stroke-width="0.5"/>
+          <text x="130" y="172" text-anchor="middle" font-family="DM Sans, sans-serif"
+                font-size="5.5" font-weight="300" fill="#5C5650" letter-spacing="7">LISBOA</text>
+        </svg>
+      </div>
+
+      <!-- Amber shirt -->
+      <div>
+        <div style="font-family:var(--font-mono); font-size:0.4375rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa); margin-bottom:1rem;">Âmbar · Monograma</div>
+        <svg viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:240px; height:277px;">
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="#C4862B"/>
+          <path d="M 78 22 L 38 22 L 8 74 L 50 84 L 50 282 L 210 282 L 210 84 L 252 74 L 222 22 L 182 22 C 172 54 88 54 78 22 Z" fill="none" stroke="rgba(26,23,20,0.1)" stroke-width="1"/>
+          <path d="M 78 22 C 88 54 172 54 182 22" fill="none" stroke="rgba(26,23,20,0.12)" stroke-width="0.8"/>
+          <!-- Monogram chest - dark version -->
+          <g transform="translate(106, 108)">
+            <line x1="24" y1="4"  x2="3"  y2="54" stroke="#1A1714" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="27" y1="4"  x2="48" y2="54" stroke="#1A1714" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="13" y1="37" x2="38" y2="37" stroke="#1A1714" stroke-width="1.1"/>
+            <line x1="3"  y1="58" x2="48" y2="58" stroke="rgba(26,23,20,0.5)" stroke-width="0.8"/>
+          </g>
+          <text x="130" y="198" text-anchor="middle" font-family="DM Sans, sans-serif"
+                font-size="5" font-weight="300" fill="rgba(26,23,20,0.3)" letter-spacing="5.5">ADONAI LISBOA</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══════════════════════════════════════ -->
+<footer style="padding:3.5rem 3rem; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(245,240,232,0.06);">
+  <p style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa);">Adonai Lisboa · Identidade Visual 2025</p>
+  <svg viewBox="0 0 44 54" fill="none" style="width:18px; height:auto; opacity:0.25;">
+    <line x1="22" y1="4"  x2="3"  y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="25" y1="4"  x2="44" y2="48" stroke="#F5F0E8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="12" y1="33" x2="35" y2="33" stroke="#F5F0E8" stroke-width="1"/>
+    <line x1="3"  y1="51" x2="44" y2="51" stroke="#C4862B" stroke-width="0.8"/>
+  </svg>
+  <p style="font-family:var(--font-mono); font-size:0.5rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--lisboa);">Brand System v1.0</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.25, rootMargin: '-8% 0px -68% 0px' });
+
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
