@@ -1,0 +1,23 @@
+{
+  "name": "streamfx-remotion",
+  "version": "1.0.0",
+  "description": "Remotion video compositions for StreamFX",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts StreamFXIntro out/StreamFXIntro.mp4",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@remotion/cli": "4.0.294",
+    "@remotion/player": "4.0.294",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.294"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
+    "typescript": "5.4.5"
+  }
+}

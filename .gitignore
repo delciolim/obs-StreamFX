@@ -13,3 +13,7 @@
 # Visual Studio
 /.vs
 /#Build
+
+# Remotion
+/remotion/node_modules
+/remotion/out
