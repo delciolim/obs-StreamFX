@@ -10,7 +10,6 @@ import {
 
 const FPS = 30;
 
-// Each clip: file in public/clips, startFrom (trim seconds*fps), duration in seconds
 const CLIPS = [
   { file: "MVI_8953.MP4", startFrom: 0, secs: 5 },
   { file: "MVI_8954.MP4", startFrom: 0, secs: 5 },
@@ -34,7 +33,7 @@ const CLIPS = [
   { file: "MVI_9000.MP4", startFrom: 0, secs: 6 },
 ] as const;
 
-const FADE_FRAMES = 15; // half-second crossfade
+const FADE_FRAMES = 15;
 
 interface ClipProps {
   file: string;
@@ -57,13 +56,13 @@ const ClipSegment: React.FC<ClipProps> = ({ file, startFrom, durationInFrames })
       <OffthreadVideo
         src={staticFile(`clips/${file}`)}
         startFrom={startFrom}
+        // objectFit cover preserves the vertical crop on portrait footage
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
     </AbsoluteFill>
   );
 };
 
-// Animated title card at the beginning
 const TitleCard: React.FC = () => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 20, 55, 75], [0, 1, 1, 0], {
@@ -78,30 +77,32 @@ const TitleCard: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(160deg, #0d0d1a 0%, #1a1030 60%, #0d0d1a 100%)",
+        background: "linear-gradient(180deg, #0d0d1a 0%, #1a1030 50%, #0d0d1a 100%)",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        gap: 24,
+        gap: 32,
         opacity,
         transform: `scale(${scale})`,
+        padding: "0 60px",
       }}
     >
       <div
         style={{
-          fontSize: 28,
+          fontSize: 32,
           color: "#a78bfa",
           fontFamily: "Georgia, serif",
-          letterSpacing: 10,
+          letterSpacing: 8,
           textTransform: "uppercase",
           fontWeight: 400,
+          textAlign: "center",
         }}
       >
         Culto de Domingo
       </div>
       <div
         style={{
-          fontSize: 80,
+          fontSize: 96,
           fontWeight: 900,
           fontFamily: "Georgia, serif",
           color: "#f8fafc",
@@ -116,11 +117,12 @@ const TitleCard: React.FC = () => {
       </div>
       <div
         style={{
-          marginTop: 16,
-          fontSize: 22,
+          marginTop: 20,
+          fontSize: 28,
           color: "#94a3b8",
           fontFamily: "Georgia, serif",
           letterSpacing: 3,
+          textAlign: "center",
         }}
       >
         Uma tarde cheia de fé e alegria
@@ -129,7 +131,6 @@ const TitleCard: React.FC = () => {
   );
 };
 
-// End card
 const EndCard: React.FC = () => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 20, 60, 75], [0, 1, 1, 0], {
@@ -140,17 +141,18 @@ const EndCard: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: "linear-gradient(160deg, #0d0d1a 0%, #1a1030 60%, #0d0d1a 100%)",
+        background: "linear-gradient(180deg, #0d0d1a 0%, #1a1030 50%, #0d0d1a 100%)",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        gap: 20,
+        gap: 24,
         opacity,
+        padding: "0 60px",
       }}
     >
       <div
         style={{
-          fontSize: 56,
+          fontSize: 68,
           fontWeight: 700,
           color: "#f8fafc",
           fontFamily: "Georgia, serif",
@@ -164,11 +166,12 @@ const EndCard: React.FC = () => {
       </div>
       <div
         style={{
-          marginTop: 8,
-          fontSize: 20,
+          marginTop: 12,
+          fontSize: 24,
           color: "#64748b",
           fontFamily: "Georgia, serif",
           letterSpacing: 2,
+          textAlign: "center",
         }}
       >
         Até ao próximo domingo ✝
@@ -178,8 +181,8 @@ const EndCard: React.FC = () => {
 };
 
 export const CultoTrailer: React.FC = () => {
-  const TITLE_FRAMES = 90; // 3 seconds
-  const END_FRAMES = 90;   // 3 seconds
+  const TITLE_FRAMES = 90;
+  const END_FRAMES = 90;
 
   let offset = TITLE_FRAMES;
   const clipSequences: React.ReactNode[] = [];
@@ -189,29 +192,18 @@ export const CultoTrailer: React.FC = () => {
     const dur = c.secs * FPS;
     clipSequences.push(
       <Sequence key={`clip-${i}`} from={offset} durationInFrames={dur}>
-        <ClipSegment
-          file={c.file}
-          startFrom={c.startFrom}
-          durationInFrames={dur}
-        />
+        <ClipSegment file={c.file} startFrom={c.startFrom} durationInFrames={dur} />
       </Sequence>
     );
     offset += dur;
   }
 
-  const totalFrames = TITLE_FRAMES + CLIPS.reduce((a, c) => a + c.secs * FPS, 0) + END_FRAMES;
-
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      {/* Title */}
       <Sequence from={0} durationInFrames={TITLE_FRAMES}>
         <TitleCard />
       </Sequence>
-
-      {/* All clips */}
       {clipSequences}
-
-      {/* End card */}
       <Sequence from={offset} durationInFrames={END_FRAMES}>
         <EndCard />
       </Sequence>
