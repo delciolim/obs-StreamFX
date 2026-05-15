@@ -2,3 +2,8 @@ node_modules/
 dist/
 out/
 .remotion/
+# Large video assets — store locally or via cloud storage
+public/clips/*.MP4
+public/clips/*.mp4
+public/clips/*.MOV
+public/clips/*.mov
